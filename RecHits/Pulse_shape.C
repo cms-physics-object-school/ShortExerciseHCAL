@@ -59,13 +59,13 @@ void Pulse_shape(TString infile) {
       ped/=3;
       sumQ-=4*ped;
 
-      for ( int i=0; i < 10; i++)
-         TS[i] = Charge[j][i]+Pedestal[j][i]-ped;
+      for ( int k=0; k < 10; k++)
+         TS[k] = Charge[j][k]+Pedestal[j][k]-ped;
       
       if (sumQ<5 || TS[4]<5 || ped<0 || TS[3]<0 || TS[5]<0 || TS[6]<0) continue;
 
-      for ( int i=0; i < 10; i++)
-         PulseShape->Fill(i, TS[i]);
+      for ( int k=0; k < 10; k++)
+         PulseShape->Fill(k, TS[k]);
     }
   }
  
