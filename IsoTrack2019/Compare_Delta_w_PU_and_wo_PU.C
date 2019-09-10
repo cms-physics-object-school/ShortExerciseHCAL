@@ -15,6 +15,7 @@ void Compare_Delta_w_PU_and_wo_PU()
    TCanvas *c1 = new TCanvas("MC_Data","",900,600);
 
    TChain no_PU_files("CalibTree");
+   no_PU_files.Add("/net/data_cms/cmspos/HCAL/IsoTrack2019/mc/mc2018noPUnew.root");
    no_PU_files.Add("/eos/cms/store/group/dpg_hcal/comm_hcal/CMS_POS/IsoTrack2019/mc/mc2018noPUnew.root");
 
    int no_PU_ieta = 0;
@@ -44,6 +45,7 @@ void Compare_Delta_w_PU_and_wo_PU()
    }
 
    TChain PU_files("CalibTree");
+   PU_files.Add("/net/data_cms/cmspos/HCAL/IsoTrack2019/mc/mc2018PUnew.root");
    PU_files.Add("/eos/cms/store/group/dpg_hcal/comm_hcal/CMS_POS/IsoTrack2019/mc/mc2018PUnew.root");
    
    int PU_ieta = 0;
